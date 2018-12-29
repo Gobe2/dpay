@@ -35,6 +35,7 @@
 # 2. API Reference
 
 1. [POST /payBills/prepay](#post-paybillsprepay-生成支付订单)
+2. [POST /payBills/bizno](#post-paybillsbizno-查询订单)
 
 ##  POST /payBills/prepay 生成支付订单
 
@@ -85,6 +86,47 @@ attach | false  | string | 附加信息 |
 }
 
 ```
+
+## POST /payBills/bizno 查询订单
+
+参数名称 | 是否必填 | 类型 | 描述 | 默认值 | 取值范围
+---|---|---|---|---|---
+orderNo | true | string | 订单号 | |
+
+请求响应例子：
+```
+//请求
+{
+"orderNo":["1525313845606","112"]
+}
+
+//响应
+{
+    "code": "200",
+    "message": "成功",
+    "data": [
+        {
+            "parentNo": 69847127374, //支付订单号
+            "refBizNo": "1525313845606",//订单号
+            "coinName": "PH",
+            "amount": 1,
+            "merchantName": "测试商户",
+            "attach": null,
+            "toAddr": "0xc2606bd69171c68b891b8479a86be341c43514ba",
+            "tokenAddr": null,
+            "txHash": "",
+            "fromAddr": "",
+            "billType": 1,
+            "status": 0,
+            "createTime": 1525313845000,
+            "completeTime": 1526954971000
+        }
+    ]
+}
+
+```
+
+
 # 商户APP demo
 [安卓demo](https://github.com/zhukunpeng0503/PayDemo)
 
