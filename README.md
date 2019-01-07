@@ -34,8 +34,8 @@
 
 # 2. API Reference
 
-1. [POST /payBills/prepay](#post-paybillsprepay-生成支付订单)
-2. [POST /payBills/bizno](#post-paybillsbizno-查询订单)
+1. [POST /dcpayCore/payBills/prepay](#post-paybillsprepay-生成支付订单)
+2. [POST /dcpayCore/payBills/bizno](#post-paybillsbizno-查询订单)
 
 ##  POST /payBills/prepay 生成支付订单
 
