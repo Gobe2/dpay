@@ -3,7 +3,7 @@
 每个请求需要设置`Content-Type: application/json`
 
 
-每个请求头需要token字段，示例：
+每个请求头需要token字段，使用Base64编码，示例：
 ```
 
 {
