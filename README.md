@@ -27,6 +27,7 @@
 请求参数加密，及签名说明：
 
 1. 随机生成密钥`key`和`iv`,使用`key`和`iv`对请求参数进行`AES`加密，形成密文`cipher`。
+2. 使用私钥`privateKey`对`key`进行RSA加密，形成加密的`key`
 2. 使用私钥`privateKey`对`cipher + key + iv`进行`SHA256WithRSA`签名，形成`signature`。
 
 `AES`使用`AES/CBC/PKCS5Padding`模式。
