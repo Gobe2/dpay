@@ -34,11 +34,11 @@
 `RSA`加密使用`pkcs1` padding scheme。
 
 请求体为`b(key')`,`b(iv)`,`b(cipher)`。
-记`b(x)`为对`x`进行`Base64`编码。
+记`b(x)`为对`x`进行`Base64`编码，`b'(x)`为对`x`进行`Base64`解码。
 
 返回数据验证签名，解密数据说明：
 
-1. 使用平台公钥`publicKey`对`cipher+key'+iv`验证签名`signature`。
+1. 使用平台公钥`publicKey`对`cipher+key'+iv`验证签名`b'(signature)`。
 2. 使用商户私钥`privateKey`对`key'`进行`RSA`解密，形成`key`。
 3. 使用`key,iv`对`cipher`进行`AES`解密。
 
