@@ -40,7 +40,7 @@
 
 1. 使用平台公钥`publicKey`验证签名`signature`。
 2. 使用商户私钥`privateKey`对`key'`进行`RSA`解密，形成`key`。
-3. 使用`key``iv`对`cipher`进行`AES`解密。
+3. 使用`key,iv`对`cipher`进行`AES`解密。
 
 # 2. API Reference
 
